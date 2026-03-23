@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-brand-base: #0B0C10;     /* Deep black */
+  --color-brand-surface: #121418;  /* Subtle surface */
+  --color-brand-accent: #FF4B2A;   /* Primary warm orange-red */
+  --color-brand-gray: #5F6468;     /* Secondary cool gray */
+  --color-brand-light: #ECF0EB;    /* Light gray / Off-white for text */
+  --color-brand-muted: #8F9498;    /* Derived muted gray for reading text */
+}
+
+:root {
+  --bg: var(--color-brand-base);
+  --surface: var(--color-brand-surface);
+  --text: var(--color-brand-light);
+  --accent: var(--color-brand-accent);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body), sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+.font-headline {
+  font-family: var(--font-headline), sans-serif;
+}
+
+.font-body {
+  font-family: var(--font-body), sans-serif;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  line-height: 1;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.surface-tint-soft {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.008) 100%),
+    radial-gradient(circle at top right, rgba(255, 75, 42, 0.09) 0%, rgba(255, 75, 42, 0.015) 20%, rgba(255, 75, 42, 0) 42%),
+    radial-gradient(circle at bottom left, rgba(255, 184, 110, 0.055) 0%, rgba(255, 184, 110, 0.01) 22%, rgba(255, 184, 110, 0) 46%),
+    radial-gradient(circle at center right, rgba(255, 108, 58, 0.022) 0%, rgba(255, 108, 58, 0) 36%),
+    rgba(18, 20, 24, 0.72);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03), inset 0 0 28px rgba(255, 124, 64, 0.035);
+}
+
+.surface-tint {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.024) 0%, rgba(255, 255, 255, 0.01) 100%),
+    radial-gradient(circle at top right, rgba(255, 75, 42, 0.12) 0%, rgba(255, 75, 42, 0.022) 22%, rgba(255, 75, 42, 0) 44%),
+    radial-gradient(circle at bottom left, rgba(255, 184, 110, 0.07) 0%, rgba(255, 184, 110, 0.015) 24%, rgba(255, 184, 110, 0) 48%),
+    radial-gradient(circle at center right, rgba(255, 120, 64, 0.032) 0%, rgba(255, 120, 64, 0) 42%),
+    rgba(18, 20, 24, 0.82);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.032), inset 0 0 36px rgba(255, 124, 64, 0.045);
+}
+
+.surface-tint-strong {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.028) 0%, rgba(255, 255, 255, 0.012) 100%),
+    radial-gradient(circle at top right, rgba(255, 75, 42, 0.16) 0%, rgba(255, 75, 42, 0.03) 24%, rgba(255, 75, 42, 0) 46%),
+    radial-gradient(circle at bottom left, rgba(255, 184, 110, 0.085) 0%, rgba(255, 184, 110, 0.018) 24%, rgba(255, 184, 110, 0) 50%),
+    radial-gradient(circle at center right, rgba(255, 120, 64, 0.04) 0%, rgba(255, 120, 64, 0) 46%),
+    rgba(18, 20, 24, 0.88);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.036), inset 0 0 44px rgba(255, 124, 64, 0.055);
+}
+
+::selection {
+  background: rgba(255, 75, 42, 0.35); /* brand-accent with opacity */
+  color: var(--color-brand-light);
+}
