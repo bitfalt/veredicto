@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Veredicto | Decision Engine</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed-dim": "#c8c6c5",
+              "on-tertiary-fixed": "#00210c",
+              "on-primary-fixed-variant": "#574500",
+              "tertiary-fixed-dim": "#4ae183",
+              "surface": "#131313",
+              "inverse-primary": "#735c00",
+              "surface-container-highest": "#353535",
+              "secondary-container": "#474746",
+              "on-error": "#690005",
+              "primary-container": "#d4af37",
+              "outline-variant": "#4d4635",
+              "on-tertiary": "#003919",
+              "on-primary": "#3c2f00",
+              "error": "#ffb4ab",
+              "on-secondary-container": "#b7b5b4",
+              "surface-container-low": "#1b1b1b",
+              "secondary": "#c8c6c5",
+              "on-tertiary-fixed-variant": "#005228",
+              "error-container": "#93000a",
+              "outline": "#99907c",
+              "background": "#131313",
+              "on-secondary-fixed-variant": "#474746",
+              "on-secondary-fixed": "#1c1b1b",
+              "on-error-container": "#ffdad6",
+              "on-surface-variant": "#d0c5af",
+              "on-primary-fixed": "#241a00",
+              "inverse-on-surface": "#303030",
+              "on-background": "#e2e2e2",
+              "surface-container": "#1f1f1f",
+              "primary-fixed": "#ffe088",
+              "tertiary-fixed": "#6bfe9c",
+              "surface-tint": "#e9c349",
+              "on-tertiary-container": "#005027",
+              "tertiary": "#54e98a",
+              "surface-variant": "#353535",
+              "surface-container-lowest": "#0e0e0e",
+              "surface-container-high": "#2a2a2a",
+              "tertiary-container": "#2ecc71",
+              "inverse-surface": "#e2e2e2",
+              "surface-dim": "#131313",
+              "secondary-fixed": "#e5e2e1",
+              "primary-fixed-dim": "#e9c349",
+              "primary": "#f2ca50",
+              "on-surface": "#e2e2e2",
+              "surface-bright": "#393939",
+              "on-primary-container": "#554300",
+              "on-secondary": "#313030"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .glass-card {
+        background: rgba(27, 27, 27, 0.4);
+        backdrop-filter: blur(20px);
+      }
+      .gold-gradient {
+        background: linear-gradient(135deg, #f2ca50 0%, #d4af37 100%);
+      }
+      .text-glow-gold {
+        text-shadow: 0 0 20px rgba(242, 202, 80, 0.3);
+      }
+      body {
+        background-color: #131313;
+        color: #e2e2e2;
+        font-family: 'Inter', sans-serif;
+      }
+    </style>
+</head>
+<body class="antialiased selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#131313]/80 backdrop-blur-xl transition-all duration-300">
+<div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+<div class="text-xl font-bold tracking-tighter text-[#f2ca50] font-headline">
+                Veredicto
+            </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-[#f2ca50] font-semibold font-headline transition-colors" href="#">Soluciones</a>
+<a class="text-zinc-400 hover:text-zinc-100 transition-colors font-headline" href="#">Metodología</a>
+<a class="text-zinc-400 hover:text-zinc-100 transition-colors font-headline" href="#">Precios</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="px-5 py-2 text-sm font-semibold rounded-full bg-[#1b1b1b] text-on-background hover:bg-[#353535] transition-all duration-300 active:scale-95">
+                    Acceso Socios
+                </button>
+</div>
+</div>
+</nav>
+<main class="pt-32">
+<!-- Hero Section -->
+<section class="max-w-7xl mx-auto px-6 text-center mb-32 relative">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/10 blur-[120px] rounded-full pointer-events-none -z-10"></div>
+<span class="inline-block px-4 py-1.5 mb-6 text-[10px] uppercase tracking-[0.2em] font-bold text-primary border border-primary/20 rounded-full bg-primary/5">
+                Inteligencia Analítica de Confianza
+            </span>
+<h1 class="text-5xl md:text-7xl font-extrabold font-headline tracking-tight text-glow-gold leading-[1.1] mb-8 max-w-4xl mx-auto">
+                Antes de firmar, pagar, mudarte o creer algo, obtén un <span class="text-primary italic">veredicto</span> claro.
+            </h1>
+<p class="text-lg md:text-xl text-on-surface-variant max-w-2xl mx-auto mb-10 font-body leading-relaxed">
+                Nuestra plataforma utiliza modelos de riesgo avanzados para analizar contratos, anuncios y propuestas, entregándote una evaluación de seguridad en segundos.
+            </p>
+<div class="flex flex-col md:flex-row items-center justify-center gap-4">
+<button class="gold-gradient text-on-primary px-8 py-4 rounded-full font-bold text-lg shadow-[0_20px_40px_rgba(242,202,80,0.15)] hover:scale-105 transition-transform duration-300">
+                    Probar demo
+                </button>
+<button class="bg-surface-container-highest text-on-surface px-8 py-4 rounded-full font-semibold text-lg hover:bg-surface-bright transition-all duration-300">
+                    Ver cómo funciona
+                </button>
+</div>
+<!-- Hero Image/Mockup -->
+<div class="mt-20 relative max-w-5xl mx-auto">
+<div class="aspect-[16/9] rounded-xl overflow-hidden glass-card p-2 border border-white/10">
+<img class="w-full h-full object-cover rounded-lg grayscale-[0.2]" data-alt="Dashboard interface with data visualization and dark theme" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJgl5XENp__AmNQeA-x46czUFEqgtH-iqeVAHW3Z76mkbPRgZ5WRMmz6Azb8Qtf9ASeMjageKfVQSbpSrU_L2GHNEgkhLQY15z2Wczyl5twejyZPxZqz4xssImk9CAovtZ39i9ecx8JPfW6eo6QS-cX9PLWquhuuynnpy8kERXCHTnqJm1NVNFG5dTYehAUIeoTJWOEPHiOhAMBfhdn1YoKJQoyOaRgm13sdJumf4s0bfft3dDo8rUAJ5J_SZ5zAfchdV-jnROzl3m"/>
+</div>
+</div>
+</section>
+<!-- Use Cases (Bento Grid) -->
+<section class="max-w-7xl mx-auto px-6 py-32 bg-surface-container-lowest/50">
+<div class="mb-16 text-left">
+<h2 class="text-xs font-bold uppercase tracking-[0.3em] text-primary mb-4">Casos de Uso</h2>
+<h3 class="text-4xl font-headline font-bold text-on-surface">Donde la precisión importa.</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[600px]">
+<!-- Case 1 -->
+<div class="md:col-span-8 group relative bg-surface-container-low rounded-xl overflow-hidden hover:bg-surface-container transition-all duration-500">
+<div class="p-8 h-full flex flex-col justify-between z-10 relative">
+<div>
+<span class="material-symbols-outlined text-primary text-4xl mb-4" data-icon="contract">contract</span>
+<h4 class="text-2xl font-bold mb-2">Contratos y Legal</h4>
+<p class="text-on-surface-variant max-w-md">Analiza cláusulas abusivas o riesgos ocultos en documentos legales complejos antes de comprometerte.</p>
+</div>
+<div class="mt-8 flex gap-2">
+<span class="px-3 py-1 bg-surface-container-highest rounded-full text-xs font-medium">Cláusulas</span>
+<span class="px-3 py-1 bg-surface-container-highest rounded-full text-xs font-medium">PDF</span>
+</div>
+</div>
+<img class="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:opacity-20 transition-opacity" data-alt="Abstract golden patterns representing security and networks" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9Cu2g74VZyA31CR3ocOviBSAg4gUo2JzHPS1DKVy05IackstTuxQd-T-ulDtB9V7cKEll9E15Sh3kFd-I0RTcTtZierPsgnphah2lEZZdx39a1s2efzQbmsAy-_0jMx1UQekDdaLbUkf_n31bCRFScfiGv6nUNwQowDSzUu7LOUiQtUqXvt8K3B0w56kFKBkYTnXxNNHzaY2pfJzvXZenBqcBwgZhEhjcsm8U1yR4fTZpPJJoK5QrSsLr304Q2e8bMxdCrm6Zphwg"/>
+</div>
+<!-- Case 2 -->
+<div class="md:col-span-4 group relative bg-surface-container-low rounded-xl overflow-hidden hover:bg-surface-container transition-all duration-500">
+<div class="p-8 h-full flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-primary text-4xl mb-4" data-icon="real_estate_agent">real_estate_agent</span>
+<h4 class="text-2xl font-bold mb-2">Inmobiliaria</h4>
+<p class="text-on-surface-variant">Evita fraudes en anuncios de alquiler o venta detectando patrones sospechosos.</p>
+</div>
+</div>
+</div>
+<!-- Case 3 -->
+<div class="md:col-span-4 group relative bg-surface-container-low rounded-xl overflow-hidden hover:bg-surface-container transition-all duration-500">
+<div class="p-8 h-full flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-primary text-4xl mb-4" data-icon="payments">payments</span>
+<h4 class="text-2xl font-bold mb-2">Inversiones</h4>
+<p class="text-on-surface-variant">Veredictos sobre plataformas de inversión y promesas de rentabilidad dudosa.</p>
+</div>
+</div>
+</div>
+<!-- Case 4 -->
+<div class="md:col-span-8 group relative bg-surface-container-low rounded-xl overflow-hidden hover:bg-surface-container transition-all duration-500">
+<div class="p-8 h-full flex flex-col justify-between z-10 relative">
+<div class="flex items-start justify-between">
+<div>
+<span class="material-symbols-outlined text-primary text-4xl mb-4" data-icon="ads_click">ads_click</span>
+<h4 class="text-2xl font-bold mb-2">Anuncios y Ofertas</h4>
+<p class="text-on-surface-variant max-w-sm">Verificación inmediata de veracidad en ofertas de empleo y comercio electrónico.</p>
+</div>
+<div class="hidden lg:block w-32 h-32 rounded-lg bg-surface-container-highest/50 backdrop-blur-md border border-primary/10 p-4">
+<div class="w-full h-2 bg-primary/20 rounded-full mb-2"></div>
+<div class="w-3/4 h-2 bg-primary/20 rounded-full mb-2"></div>
+<div class="w-1/2 h-2 bg-primary rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Benefits Section -->
+<section class="max-w-5xl mx-auto px-6 py-32">
+<div class="text-center mb-20">
+<h2 class="text-4xl font-headline font-bold mb-6">Un veredicto en tres niveles</h2>
+<p class="text-on-surface-variant text-lg">Nuestro motor de análisis categoriza el riesgo con precisión quirúrgica.</p>
+</div>
+<div class="space-y-8">
+<!-- Seguir -->
+<div class="group flex items-center gap-8 p-8 bg-surface-container-low rounded-2xl hover:scale-[1.01] transition-all duration-300">
+<div class="w-16 h-16 shrink-0 flex items-center justify-center rounded-full bg-tertiary/10 text-tertiary shadow-[0_0_20px_rgba(84,233,138,0.1)]">
+<span class="material-symbols-outlined text-3xl" data-icon="check_circle">check_circle</span>
+</div>
+<div>
+<h4 class="text-2xl font-bold text-tertiary mb-1">Seguir</h4>
+<p class="text-on-surface-variant leading-relaxed">Sin riesgos detectados. El análisis muestra total transparencia y cumplimiento normativo.</p>
+</div>
+</div>
+<!-- Revisar -->
+<div class="group flex items-center gap-8 p-8 bg-surface-container-low rounded-2xl hover:scale-[1.01] transition-all duration-300">
+<div class="w-16 h-16 shrink-0 flex items-center justify-center rounded-full bg-primary/10 text-primary shadow-[0_0_20px_rgba(242,202,80,0.1)]">
+<span class="material-symbols-outlined text-3xl" data-icon="warning">warning</span>
+</div>
+<div>
+<h4 class="text-2xl font-bold text-primary mb-1">Revisar</h4>
+<p class="text-on-surface-variant leading-relaxed">Existen puntos ambiguos o falta de información. Recomendamos cautela y validación manual.</p>
+</div>
+</div>
+<!-- Frenar -->
+<div class="group flex items-center gap-8 p-8 bg-surface-container-low rounded-2xl hover:scale-[1.01] transition-all duration-300">
+<div class="w-16 h-16 shrink-0 flex items-center justify-center rounded-full bg-error/10 text-error shadow-[0_0_20px_rgba(255,180,171,0.1)]">
+<span class="material-symbols-outlined text-3xl" data-icon="dangerous">dangerous</span>
+</div>
+<div>
+<h4 class="text-2xl font-bold text-error mb-1">Frenar</h4>
+<p class="text-on-surface-variant leading-relaxed">Riesgo crítico detectado. Patrones fraudulentos confirmados o vacíos legales graves.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="max-w-7xl mx-auto px-6 py-32 mb-32">
+<div class="relative bg-surface-container-low rounded-[2rem] p-12 md:p-24 overflow-hidden text-center border border-white/5">
+<div class="absolute inset-0 bg-primary/5 -z-10"></div>
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/20 blur-[80px] rounded-full"></div>
+<h2 class="text-4xl md:text-5xl font-headline font-bold mb-8">Empieza a decidir con seguridad hoy.</h2>
+<div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+<button class="gold-gradient text-on-primary px-10 py-5 rounded-full font-bold text-xl shadow-xl hover:scale-105 transition-all">
+                        Solicitar Acceso Gratuito
+                    </button>
+<a class="text-primary font-semibold underline underline-offset-8 decoration-outline-variant hover:decoration-primary transition-all" href="#">Hablar con un consultor</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest py-20 border-t border-white/5">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+<div class="col-span-1 md:col-span-1">
+<div class="text-2xl font-black text-primary uppercase tracking-[0.1em] mb-6 font-headline">
+                        Veredicto
+                    </div>
+<p class="text-zinc-500 text-sm leading-relaxed">
+                        El primer motor de veredictos basado en IA para la seguridad en transacciones y acuerdos cotidianos.
+                    </p>
+</div>
+<div>
+<h5 class="text-on-surface font-bold mb-6">Producto</h5>
+<ul class="space-y-4 text-zinc-500 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Funcionalidades</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">API</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Integraciones</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Enterprise</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-on-surface font-bold mb-6">Recursos</h5>
+<ul class="space-y-4 text-zinc-500 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Documentación</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Guías de Seguridad</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Blog</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Casos de Éxito</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-on-surface font-bold mb-6">Legal</h5>
+<ul class="space-y-4 text-zinc-500 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Privacidad</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Términos</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Compliance</a></li>
+</ul>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/5 text-zinc-600 text-xs">
+<p>© 2024 Veredicto Decision Engine. Todos los derechos reservados.</p>
+<div class="flex gap-6 mt-4 md:mt-0">
+<a class="hover:text-primary transition-colors" href="#">Twitter</a>
+<a class="hover:text-primary transition-colors" href="#">LinkedIn</a>
+<a class="hover:text-primary transition-colors" href="#">GitHub</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

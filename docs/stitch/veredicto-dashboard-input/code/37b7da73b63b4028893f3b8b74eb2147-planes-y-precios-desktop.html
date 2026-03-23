@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Precios - Veredicto</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary-container": "#2ecc71",
+                        "on-surface": "#e2e2e2",
+                        "surface-variant": "#353535",
+                        "on-surface-variant": "#d0c5af",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface-container": "#1f1f1f",
+                        "primary-fixed": "#ffe088",
+                        "on-primary-fixed": "#241a00",
+                        "surface-tint": "#e9c349",
+                        "surface-container-low": "#1b1b1b",
+                        "outline-variant": "#4d4635",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "tertiary-fixed": "#6bfe9c",
+                        "surface-dim": "#131313",
+                        "on-tertiary-fixed": "#00210c",
+                        "inverse-surface": "#e2e2e2",
+                        "on-secondary-container": "#b7b5b4",
+                        "on-tertiary": "#003919",
+                        "surface-container-highest": "#353535",
+                        "primary": "#f2ca50",
+                        "on-secondary-fixed-variant": "#474746",
+                        "on-tertiary-fixed-variant": "#005228",
+                        "on-background": "#e2e2e2",
+                        "surface-bright": "#393939",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "tertiary-fixed-dim": "#4ae183",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-tertiary-container": "#005027",
+                        "secondary": "#c8c6c5",
+                        "on-error": "#690005",
+                        "on-secondary": "#313030",
+                        "on-primary-fixed-variant": "#574500",
+                        "error-container": "#93000a",
+                        "tertiary": "#54e98a",
+                        "secondary-container": "#474746",
+                        "on-primary": "#3c2f00",
+                        "primary-container": "#d4af37",
+                        "on-primary-container": "#554300",
+                        "error": "#ffb4ab",
+                        "surface": "#131313",
+                        "primary-fixed-dim": "#e9c349",
+                        "inverse-primary": "#735c00",
+                        "outline": "#99907c",
+                        "on-error-container": "#ffdad6",
+                        "inverse-on-surface": "#303030",
+                        "background": "#131313",
+                        "surface-container-high": "#2a2a2a"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .premium-gradient {
+            background: linear-gradient(135deg, #f2ca50 0%, #d4af37 100%);
+        }
+        .obsidian-glow {
+            box-shadow: 0 0 40px rgba(242, 202, 80, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary/30">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#131313]">
+<div class="flex justify-between items-center px-6 h-16 w-full max-w-7xl mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-[#f2ca50] font-headline">Veredicto</div>
+<div class="hidden md:flex items-center space-gap-8 font-headline tracking-tight text-[#e2e2e2]">
+<a class="text-[#e2e2e2]/70 hover:text-[#f2ca50] transition-colors px-4" href="#">How it Works</a>
+<a class="text-[#f2ca50] font-bold border-b-2 border-[#f2ca50] pb-1 px-4" href="#">Pricing</a>
+<a class="text-[#e2e2e2]/70 hover:text-[#f2ca50] transition-colors px-4" href="#">Library</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-[#e2e2e2]/70 hover:bg-[#353535] p-2 rounded-full transition-all">notifications</button>
+<button class="bg-primary text-on-primary px-5 py-2 rounded-full font-bold text-sm scale-95 active:scale-90 transition-transform premium-gradient">
+                    Obtener Veredicto
+                </button>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-6 max-w-7xl mx-auto">
+<!-- Header Section -->
+<header class="text-center mb-20">
+<h1 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tighter mb-6 bg-clip-text text-transparent bg-gradient-to-b from-on-surface to-on-surface-variant">
+                Planes de Inversión
+            </h1>
+<p class="text-on-surface/60 max-w-2xl mx-auto text-lg leading-relaxed">
+                Accede a la precisión absoluta. Elige el lente que mejor se adapte a tu escala de análisis y toma decisiones con autoridad editorial.
+            </p>
+</header>
+<!-- Pricing Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-32">
+<!-- Básico -->
+<div class="bg-surface-container-low rounded-xl p-8 flex flex-col transition-all duration-300 hover:bg-surface-container">
+<div class="mb-8">
+<span class="text-xs font-label uppercase tracking-[0.2em] text-on-surface/40">Entrada</span>
+<h3 class="font-headline text-2xl font-bold mt-2">Básico</h3>
+<div class="mt-4 flex items-baseline gap-1">
+<span class="text-4xl font-bold tracking-tighter">Gratis</span>
+</div>
+</div>
+<ul class="space-y-5 mb-10 flex-grow">
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-primary scale-75">check_circle</span>
+                        3 análisis mensuales
+                    </li>
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-primary scale-75">check_circle</span>
+                        AI Voice (Estándar)
+                    </li>
+<li class="flex items-center gap-3 text-sm text-on-surface/40">
+<span class="material-symbols-outlined scale-75">cancel</span>
+                        Soporte estándar
+                    </li>
+<li class="flex items-center gap-3 text-sm text-on-surface/40">
+<span class="material-symbols-outlined scale-75">cancel</span>
+                        Historial (7 días)
+                    </li>
+</ul>
+<button class="w-full py-3 rounded-full bg-surface-container-highest text-on-surface font-semibold hover:bg-surface-bright transition-all">
+                    Empezar ahora
+                </button>
+</div>
+<!-- Pro -->
+<div class="bg-surface-container-low rounded-xl p-8 flex flex-col transition-all duration-300 hover:bg-surface-container relative overflow-hidden">
+<div class="mb-8">
+<span class="text-xs font-label uppercase tracking-[0.2em] text-primary/80">Recomendado</span>
+<h3 class="font-headline text-2xl font-bold mt-2">Pro</h3>
+<div class="mt-4 flex items-baseline gap-1">
+<span class="text-4xl font-bold tracking-tighter">29€</span>
+<span class="text-on-surface/40">/mes</span>
+</div>
+</div>
+<ul class="space-y-5 mb-10 flex-grow">
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-primary scale-75">check_circle</span>
+                        50 análisis mensuales
+                    </li>
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-primary scale-75">check_circle</span>
+                        AI Voice (Velocidad 2x)
+                    </li>
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-primary scale-75">check_circle</span>
+                        Soporte prioritario
+                    </li>
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-primary scale-75">check_circle</span>
+                        Historial ilimitado
+                    </li>
+</ul>
+<button class="w-full py-3 rounded-full bg-surface-container-highest text-on-surface font-semibold hover:bg-surface-bright transition-all">
+                    Suscribirse
+                </button>
+</div>
+<!-- Elite -->
+<div class="bg-surface-container-highest rounded-xl p-8 flex flex-col relative obsidian-glow border border-primary/20 scale-105 z-10">
+<div class="absolute top-4 right-6">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<div class="mb-8">
+<span class="text-xs font-label uppercase tracking-[0.2em] text-primary">Prestigio</span>
+<h3 class="font-headline text-2xl font-bold mt-2">Elite</h3>
+<div class="mt-4 flex items-baseline gap-1">
+<span class="text-4xl font-bold tracking-tighter">99€</span>
+<span class="text-on-surface/40">/mes</span>
+</div>
+</div>
+<ul class="space-y-5 mb-10 flex-grow">
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-primary scale-75" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                        Análisis ilimitados
+                    </li>
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-primary scale-75" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                        AI Voice (Real-time Ultra)
+                    </li>
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-primary scale-75" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                        Soporte dedicado 24/7
+                    </li>
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-primary scale-75" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                        Exportación forense &amp; Historial
+                    </li>
+</ul>
+<button class="w-full py-3 rounded-full bg-primary text-on-primary font-bold hover:brightness-110 transition-all premium-gradient shadow-lg">
+                    Activar Elite
+                </button>
+</div>
+</div>
+<!-- Bento Grid Feature Highlight -->
+<section class="mb-32">
+<div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-4 h-auto md:h-[500px]">
+<div class="md:col-span-2 md:row-span-2 bg-surface-container-low rounded-xl p-10 flex flex-col justify-end relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
+<img alt="Abstract digital lens pattern" class="absolute inset-0 w-full h-full object-cover opacity-20 grayscale group-hover:scale-110 transition-transform duration-700" data-alt="Abstract golden digital wave pattern on black background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJs9SVk5gd8r3imX8PNYgP6Nh7XWMRhsgwNWEueN5WDH_cy6PLkQSy4eZRH0ayVfF3y_ercltP1oNoN-CMN1YGnKmKt4ornwIE_UTo5vUe-erCLkvD_5q94_5xTSQwqpxy4raIYocPL_N8Ah-QoLL0vZJFXMRL4e6SgHaUCFshRSrKDhlRDmtXfjjdln600dUAtFFMXZUZjeOorBsv3GeDDD_rJ76-AjJQc7VnhvmjA9AtD1xhExjQc_xaiMS5evyqbdOr4pQE-TXD"/>
+<div class="relative z-10">
+<span class="text-primary font-bold text-sm tracking-widest uppercase mb-4 block">Tecnología</span>
+<h2 class="font-headline text-3xl font-bold mb-4">Análisis Forense en Tiempo Real</h2>
+<p class="text-on-surface/60 max-w-md">Nuestro motor Obsidian Lens procesa miles de variables por segundo para ofrecerte un veredicto definitivo cuando más importa.</p>
+</div>
+</div>
+<div class="md:col-span-2 bg-surface-container rounded-xl p-8 flex items-center justify-between">
+<div>
+<h3 class="font-headline text-xl font-bold mb-2">AI Voice Speed</h3>
+<p class="text-sm text-on-surface/60">Escucha tus veredictos a la velocidad del pensamiento con voces neuronales de alta fidelidad.</p>
+</div>
+<span class="material-symbols-outlined text-4xl text-primary/40">graphic_eq</span>
+</div>
+<div class="bg-surface-container-high rounded-xl p-8 flex flex-col justify-center text-center">
+<span class="text-3xl font-bold text-primary mb-1">99.9%</span>
+<p class="text-[10px] uppercase tracking-widest text-on-surface/40 font-label">Uptime Garantizado</p>
+</div>
+<div class="bg-primary/5 rounded-xl p-8 flex flex-col justify-center text-center border border-primary/10">
+<span class="text-3xl font-bold text-primary mb-1">24/7</span>
+<p class="text-[10px] uppercase tracking-widest text-on-surface/40 font-label">Soporte Elite</p>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="max-w-3xl mx-auto">
+<h2 class="font-headline text-3xl font-bold mb-12 text-center">Preguntas Frecuentes</h2>
+<div class="space-y-4">
+<div class="bg-surface-container-low rounded-xl p-6 group cursor-pointer hover:bg-surface-container transition-all">
+<div class="flex justify-between items-center">
+<h4 class="font-semibold text-on-surface">¿Puedo cambiar de plan en cualquier momento?</h4>
+<span class="material-symbols-outlined text-primary/60 group-hover:rotate-180 transition-transform">expand_more</span>
+</div>
+<p class="mt-4 text-on-surface/60 text-sm hidden group-hover:block transition-all">
+                        Sí, puedes escalar o reducir tu plan desde el panel de configuración en cualquier momento. Los cambios se aplicarán al final del ciclo de facturación actual.
+                    </p>
+</div>
+<div class="bg-surface-container-low rounded-xl p-6 group cursor-pointer hover:bg-surface-container transition-all">
+<div class="flex justify-between items-center">
+<h4 class="font-semibold text-on-surface">¿Qué incluye el análisis ilimitado del plan Elite?</h4>
+<span class="material-symbols-outlined text-primary/60 group-hover:rotate-180 transition-transform">expand_more</span>
+</div>
+<p class="mt-4 text-on-surface/60 text-sm hidden group-hover:block transition-all">
+                        El plan Elite no tiene restricciones técnicas en el número de análisis que puedes realizar por día o mes, ideal para instituciones y profesionales de alto volumen.
+                    </p>
+</div>
+<div class="bg-surface-container-low rounded-xl p-6 group cursor-pointer hover:bg-surface-container transition-all">
+<div class="flex justify-between items-center">
+<h4 class="font-semibold text-on-surface">¿Los datos están seguros con Veredicto?</h4>
+<span class="material-symbols-outlined text-primary/60 group-hover:rotate-180 transition-transform">expand_more</span>
+</div>
+<p class="mt-4 text-on-surface/60 text-sm hidden group-hover:block transition-all">
+                        Absolutamente. Utilizamos encriptación de grado militar y procesamos todos los datos bajo estándares estrictos de privacidad. Nunca compartimos tus análisis.
+                    </p>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-2 bg-[#131313]/80 backdrop-blur-xl border-t border-[#f2ca50]/15 z-50">
+<a class="flex flex-col items-center justify-center text-[#e2e2e2]/50 p-2" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#e2e2e2]/50 p-2" href="#">
+<span class="material-symbols-outlined">book</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest mt-1">Library</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#f2ca50] text-[#131313] rounded-full p-3 mb-2 scale-110" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">payments</span>
+<span class="sr-only">Pricing</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#e2e2e2]/50 p-2" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest mt-1">Settings</span>
+</a>
+</nav>
+<footer class="bg-surface-container-lowest pt-20 pb-32 border-t border-on-surface/5">
+<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="md:col-span-2">
+<div class="text-2xl font-bold tracking-tighter text-primary font-headline mb-6 uppercase">Veredicto</div>
+<p class="text-on-surface/40 max-w-sm mb-8">
+                    La lente de obsidiana para el análisis de riesgos y decisiones definitivas. Precisión técnica con alma editorial.
+                </p>
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center hover:text-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-sm">public</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center hover:text-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-sm">share</span>
+</div>
+</div>
+</div>
+<div>
+<h5 class="font-headline font-bold mb-6 text-on-surface">Legal</h5>
+<ul class="space-y-4 text-sm text-on-surface/40">
+<li class="hover:text-primary cursor-pointer transition-colors">Términos de Servicio</li>
+<li class="hover:text-primary cursor-pointer transition-colors">Política de Privacidad</li>
+<li class="hover:text-primary cursor-pointer transition-colors">Seguridad</li>
+</ul>
+</div>
+<div>
+<h5 class="font-headline font-bold mb-6 text-on-surface">Compañía</h5>
+<ul class="space-y-4 text-sm text-on-surface/40">
+<li class="hover:text-primary cursor-pointer transition-colors">Sobre Nosotros</li>
+<li class="hover:text-primary cursor-pointer transition-colors">Blog</li>
+<li class="hover:text-primary cursor-pointer transition-colors">Contacto</li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-6 mt-20 pt-8 border-t border-on-surface/5 text-center md:text-left">
+<p class="text-[10px] uppercase tracking-widest text-on-surface/20 font-label">© 2024 Veredicto - The Obsidian Lens Protocol.</p>
+</div>
+</footer>
+</body></html>

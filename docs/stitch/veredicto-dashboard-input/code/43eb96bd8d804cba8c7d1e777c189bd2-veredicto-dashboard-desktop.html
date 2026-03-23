@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Veredicto | Dashboard de Análisis</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "on-tertiary-fixed": "#00210c",
+                        "on-primary-fixed-variant": "#574500",
+                        "tertiary-fixed-dim": "#4ae183",
+                        "surface": "#131313",
+                        "inverse-primary": "#735c00",
+                        "surface-container-highest": "#353535",
+                        "secondary-container": "#474746",
+                        "on-error": "#690005",
+                        "primary-container": "#d4af37",
+                        "outline-variant": "#4d4635",
+                        "on-tertiary": "#003919",
+                        "on-primary": "#3c2f00",
+                        "error": "#ffb4ab",
+                        "on-secondary-container": "#b7b5b4",
+                        "surface-container-low": "#1b1b1b",
+                        "secondary": "#c8c6c5",
+                        "on-tertiary-fixed-variant": "#005228",
+                        "error-container": "#93000a",
+                        "outline": "#99907c",
+                        "background": "#131313",
+                        "on-secondary-fixed-variant": "#474746",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-error-container": "#ffdad6",
+                        "on-surface-variant": "#d0c5af",
+                        "on-primary-fixed": "#241a00",
+                        "inverse-on-surface": "#303030",
+                        "on-background": "#e2e2e2",
+                        "surface-container": "#1f1f1f",
+                        "primary-fixed": "#ffe088",
+                        "tertiary-fixed": "#6bfe9c",
+                        "surface-tint": "#e9c349",
+                        "on-tertiary-container": "#005027",
+                        "tertiary": "#54e98a",
+                        "surface-variant": "#353535",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface-container-high": "#2a2a2a",
+                        "tertiary-container": "#2ecc71",
+                        "inverse-surface": "#e2e2e2",
+                        "surface-dim": "#131313",
+                        "secondary-fixed": "#e5e2e1",
+                        "primary-fixed-dim": "#e9c349",
+                        "primary": "#f2ca50",
+                        "on-surface": "#e2e2e2",
+                        "surface-bright": "#393939",
+                        "on-primary-container": "#554300",
+                        "on-secondary": "#313030"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(27, 27, 27, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .mesh-gradient-btn {
+            background: linear-gradient(135deg, #f2ca50 0%, #d4af37 100%);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .active-glow {
+            box-shadow: 0 0 15px rgba(242, 202, 80, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body min-h-screen flex">
+<!-- SideNavBar (Shared Component Implementation) -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-[#131313] border-r border-white/5 bg-[#1b1b1b] shadow-[20px_0_40px_rgba(0,0,0,0.4)] flex flex-col p-4 gap-2 z-50">
+<div class="mb-8 px-4">
+<h1 class="text-lg font-black text-[#f2ca50] uppercase tracking-[0.1em] font-headline">Veredicto</h1>
+<p class="text-[10px] text-zinc-500 font-medium tracking-[0.2em] uppercase">Decision Engine</p>
+</div>
+<nav class="flex-1 flex flex-col gap-1">
+<a class="flex items-center gap-3 px-4 py-3 bg-[#f2ca50] text-black rounded-lg shadow-[0_0_15px_rgba(242,202,80,0.2)] font-plus-jakarta-sans text-sm font-medium tracking-wide transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-zinc-500 hover:text-zinc-200 hover:bg-[#353535] transition-colors duration-200 font-plus-jakarta-sans text-sm font-medium tracking-wide" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span>Análisis</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-zinc-500 hover:text-zinc-200 hover:bg-[#353535] transition-colors duration-200 font-plus-jakarta-sans text-sm font-medium tracking-wide" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span>Historial</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-zinc-500 hover:text-zinc-200 hover:bg-[#353535] transition-colors duration-200 font-plus-jakarta-sans text-sm font-medium tracking-wide" href="#">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span>Librería</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-zinc-500 hover:text-zinc-200 hover:bg-[#353535] transition-colors duration-200 font-plus-jakarta-sans text-sm font-medium tracking-wide" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Configuración</span>
+</a>
+</nav>
+<div class="mt-auto flex flex-col gap-1 pt-4 border-t border-white/5">
+<a class="flex items-center gap-3 px-4 py-3 text-zinc-500 hover:text-zinc-200 hover:bg-[#353535] transition-colors duration-200 font-plus-jakarta-sans text-sm font-medium tracking-wide" href="#">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+<span>Soporte</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-zinc-500 hover:text-zinc-200 hover:bg-[#353535] transition-colors duration-200 font-plus-jakarta-sans text-sm font-medium tracking-wide" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>Cerrar Sesión</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 flex-1 flex flex-col p-8 gap-8 overflow-y-auto">
+<!-- Header Section -->
+<header class="flex justify-between items-end">
+<div>
+<span class="text-[10px] font-bold uppercase tracking-[0.2em] text-outline mb-2 block">Central de Mando</span>
+<h2 class="text-4xl font-extrabold font-headline tracking-tighter">Nuevo Análisis</h2>
+</div>
+<div class="flex items-center gap-4">
+<div class="bg-surface-container-low p-2 rounded-xl flex items-center gap-3 pr-4">
+<div class="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="bolt">bolt</span>
+</div>
+<span class="text-xs font-semibold text-on-surface-variant">Tokens: 14,205</span>
+</div>
+<button class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center hover:bg-surface-bright transition-colors">
+<span class="material-symbols-outlined text-on-surface" data-icon="notifications">notifications</span>
+</button>
+</div>
+</header>
+<!-- Main Bento Grid -->
+<div class="grid grid-cols-12 gap-6 items-start">
+<!-- Left Side: Input Area -->
+<div class="col-span-12 xl:col-span-8 flex flex-col gap-6">
+<!-- Tab Selector Component -->
+<div class="bg-surface-container-low rounded-2xl p-1.5 flex gap-1 w-fit">
+<button class="px-6 py-2.5 rounded-xl bg-surface-container-highest text-primary text-sm font-bold flex items-center gap-2 transition-all">
+<span class="material-symbols-outlined text-lg" data-icon="link">link</span>
+                        Enlace
+                    </button>
+<button class="px-6 py-2.5 rounded-xl text-on-surface-variant hover:text-on-surface text-sm font-medium flex items-center gap-2 transition-all">
+<span class="material-symbols-outlined text-lg" data-icon="description">description</span>
+                        Documento
+                    </button>
+<button class="px-6 py-2.5 rounded-xl text-on-surface-variant hover:text-on-surface text-sm font-medium flex items-center gap-2 transition-all">
+<span class="material-symbols-outlined text-lg" data-icon="mic">mic</span>
+                        Audio
+                    </button>
+<button class="px-6 py-2.5 rounded-xl text-on-surface-variant hover:text-on-surface text-sm font-medium flex items-center gap-2 transition-all">
+<span class="material-symbols-outlined text-lg" data-icon="subject">subject</span>
+                        Texto
+                    </button>
+</div>
+<!-- Main Analysis Input Card -->
+<section class="bg-surface-container-low rounded-[2rem] p-8 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-[100px] rounded-full -mr-20 -mt-20"></div>
+<div class="relative z-10 flex flex-col gap-8">
+<div>
+<label class="text-sm font-bold text-outline-variant uppercase tracking-widest mb-4 block">Fuente de Análisis</label>
+<div class="flex gap-4">
+<div class="flex-1 bg-surface-container-lowest rounded-2xl p-1 flex items-center shadow-inner group focus-within:ring-1 focus-within:ring-primary/30 transition-all">
+<div class="pl-4 text-outline">
+<span class="material-symbols-outlined" data-icon="public">public</span>
+</div>
+<input class="bg-transparent border-none focus:ring-0 w-full text-on-surface placeholder:text-zinc-600 font-body py-4" placeholder="https://portal.legal/caso/expediente-2024..." type="text"/>
+</div>
+<button class="mesh-gradient-btn text-on-primary font-headline font-extrabold px-8 rounded-2xl shadow-[0_10px_20px_rgba(242,202,80,0.2)] hover:scale-[1.02] active:scale-95 transition-all">
+                                    OBTENER VERDICTO
+                                </button>
+</div>
+</div><div class="mt-4">
+<label class="text-[10px] font-bold text-outline-variant uppercase tracking-widest mb-2 block">Contexto opcional</label>
+<textarea class="w-full bg-surface-container-lowest/50 border border-outline-variant/30 rounded-2xl p-4 text-on-surface placeholder:text-zinc-600 font-headline text-sm focus:ring-1 focus:ring-primary/30 focus:border-primary/30 transition-all resize-none" placeholder="¿Qué te preocupa de este contrato?" rows="3"></textarea>
+</div>
+<!-- Drop Zone -->
+<div class="border-2 border-dashed border-outline-variant rounded-[1.5rem] p-12 flex flex-col items-center justify-center gap-4 group hover:border-primary/50 transition-colors bg-surface-container-lowest/50">
+<div class="w-16 h-16 rounded-full bg-surface-container-highest flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="upload_file">upload_file</span>
+</div>
+<div class="text-center">
+<p class="text-on-surface font-semibold">Arrastra archivos aquí o <span class="text-primary underline cursor-pointer">explora</span></p>
+<p class="text-xs text-outline mt-1">PDF, DOCX, MP3 (Máx 50MB)</p>
+</div>
+</div>
+<!-- Suggestions -->
+<div class="flex flex-col gap-3">
+<span class="text-[10px] font-bold text-outline uppercase tracking-wider">Sugerencias Rápidas</span>
+<div class="flex gap-3 flex-wrap">
+<button class="bg-surface-container-high px-4 py-2 rounded-lg text-xs font-medium text-on-surface hover:bg-surface-bright transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="history_edu">history_edu</span>
+                                    Contrato de Arrendamiento
+                                </button>
+<button class="bg-surface-container-high px-4 py-2 rounded-lg text-xs font-medium text-on-surface hover:bg-surface-bright transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="gavel">gavel</span>
+                                    Sentencia Recurso 402/23
+                                </button>
+<button class="bg-surface-container-high px-4 py-2 rounded-lg text-xs font-medium text-on-surface hover:bg-surface-bright transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="shield">shield</span>
+                                    Póliza de Privacidad AI
+                                </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Insight / Bento Item -->
+<div class="grid grid-cols-2 gap-6">
+<div class="bg-surface-container-low rounded-[1.5rem] p-6 flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<div class="w-10 h-10 rounded-xl bg-tertiary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<span class="text-[10px] font-bold text-tertiary bg-tertiary/10 px-2 py-1 rounded">NUEVO</span>
+</div>
+<div>
+<h3 class="font-headline font-bold text-lg mb-1">Análisis Predictivo</h3>
+<p class="text-sm text-outline leading-relaxed">Anticípate a fallos judiciales basados en jurisprudencia actualizada al 2024.</p>
+</div>
+</div>
+<div class="bg-primary rounded-[1.5rem] p-6 flex flex-col gap-4 text-on-primary group cursor-pointer overflow-hidden relative">
+<div class="absolute -right-4 -bottom-4 opacity-10 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[120px]" data-icon="diamond">diamond</span>
+</div>
+<div class="w-10 h-10 rounded-xl bg-on-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<div>
+<h3 class="font-headline font-bold text-lg mb-1">Plan Elite</h3>
+<p class="text-sm text-on-primary/80 leading-relaxed">Análisis ilimitados y soporte legal prioritario 24/7.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Side: Recent History -->
+<aside class="col-span-12 xl:col-span-4 flex flex-col gap-6">
+<div class="flex items-center justify-between px-2">
+<h3 class="font-headline font-bold text-xl tracking-tight">Actividad Reciente</h3>
+<button class="text-primary text-xs font-bold uppercase tracking-widest hover:underline">Ver todo</button>
+</div>
+<div class="flex flex-col gap-4">
+<!-- History Item: Frenar -->
+<div class="bg-surface-container-low p-4 rounded-2xl group hover:bg-surface-container-high transition-all cursor-pointer">
+<div class="flex gap-4">
+<div class="relative">
+<div class="w-14 h-14 rounded-full bg-surface-container-lowest flex items-center justify-center border border-error/20">
+<span class="material-symbols-outlined text-error" data-icon="gavel">gavel</span>
+</div>
+<div class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-error border-4 border-surface-container-low flex items-center justify-center">
+<span class="material-symbols-outlined text-on-error text-[12px] font-bold" data-icon="close">close</span>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start mb-1">
+<h4 class="text-sm font-bold truncate text-on-surface">Acuerdo de Socios V3</h4>
+<span class="text-[10px] text-outline font-medium">14:20</span>
+</div>
+<div class="flex items-center gap-2 mb-2">
+<span class="text-[10px] font-bold uppercase tracking-wider text-error">FRENAR</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="text-[10px] text-outline">Riesgo Crítico</span>
+</div>
+<div class="w-full bg-surface-container-lowest h-1 rounded-full overflow-hidden">
+<div class="bg-error h-full w-[85%]"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- History Item: Revisar -->
+<div class="bg-surface-container-low p-4 rounded-2xl group hover:bg-surface-container-high transition-all cursor-pointer border-l-4 border-transparent hover:border-primary">
+<div class="flex gap-4">
+<div class="relative">
+<div class="w-14 h-14 rounded-full bg-surface-container-lowest flex items-center justify-center border border-primary/20">
+<span class="material-symbols-outlined text-primary" data-icon="description">description</span>
+</div>
+<div class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-primary border-4 border-surface-container-low flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-[12px] font-bold" data-icon="priority_high">priority_high</span>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start mb-1">
+<h4 class="text-sm font-bold truncate text-on-surface">Términos de Uso API</h4>
+<span class="text-[10px] text-outline font-medium">Ayer</span>
+</div>
+<div class="flex items-center gap-2 mb-2">
+<span class="text-[10px] font-bold uppercase tracking-wider text-primary">REVISAR</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="text-[10px] text-outline">Cláusulas Ambiguas</span>
+</div>
+<div class="w-full bg-surface-container-lowest h-1 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[45%]"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- History Item: Seguir -->
+<div class="bg-surface-container-low p-4 rounded-2xl group hover:bg-surface-container-high transition-all cursor-pointer">
+<div class="flex gap-4">
+<div class="relative">
+<div class="w-14 h-14 rounded-full bg-surface-container-lowest flex items-center justify-center border border-tertiary/20">
+<span class="material-symbols-outlined text-tertiary" data-icon="audio_file">audio_file</span>
+</div>
+<div class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-tertiary border-4 border-surface-container-low flex items-center justify-center">
+<span class="material-symbols-outlined text-on-tertiary text-[12px] font-bold" data-icon="check">check</span>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start mb-1">
+<h4 class="text-sm font-bold truncate text-on-surface">Grabación Audiencia #12</h4>
+<span class="text-[10px] text-outline font-medium">Ayer</span>
+</div>
+<div class="flex items-center gap-2 mb-2">
+<span class="text-[10px] font-bold uppercase tracking-wider text-tertiary">SEGUIR</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="text-[10px] text-outline">Sin Conflictos</span>
+</div>
+<div class="w-full bg-surface-container-lowest h-1 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full w-[12%]"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- History Item: Seguir 2 -->
+<div class="bg-surface-container-low p-4 rounded-2xl group hover:bg-surface-container-high transition-all cursor-pointer">
+<div class="flex gap-4">
+<div class="relative">
+<div class="w-14 h-14 rounded-full bg-surface-container-lowest flex items-center justify-center border border-tertiary/20">
+<span class="material-symbols-outlined text-tertiary" data-icon="link">link</span>
+</div>
+<div class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-tertiary border-4 border-surface-container-low flex items-center justify-center">
+<span class="material-symbols-outlined text-on-tertiary text-[12px] font-bold" data-icon="check">check</span>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start mb-1">
+<h4 class="text-sm font-bold truncate text-on-surface">Contrato Arrendamiento Madrid</h4>
+<span class="text-[10px] text-outline font-medium">12 Oct</span>
+</div>
+<div class="flex items-center gap-2 mb-2">
+<span class="text-[10px] font-bold uppercase tracking-wider text-tertiary">SEGUIR</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="text-[10px] text-outline">Validado</span>
+</div>
+<div class="w-full bg-surface-container-lowest h-1 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full w-[5%]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Stats -->
+<div class="mt-4 bg-surface-container-lowest rounded-2xl p-6 border border-white/5">
+<h5 class="text-[10px] font-black text-outline-variant uppercase tracking-[0.2em] mb-4">Métricas del Mes</h5>
+<div class="flex justify-between items-center">
+<div class="text-center">
+<p class="text-2xl font-headline font-black text-primary">84</p>
+<p class="text-[8px] font-bold text-outline uppercase">Análisis</p>
+</div>
+<div class="w-[1px] h-8 bg-outline-variant/30"></div>
+<div class="text-center">
+<p class="text-2xl font-headline font-black text-tertiary">98%</p>
+<p class="text-[8px] font-bold text-outline uppercase">Precisión</p>
+</div>
+<div class="w-[1px] h-8 bg-outline-variant/30"></div>
+<div class="text-center">
+<p class="text-2xl font-headline font-black text-on-surface">2.4h</p>
+<p class="text-[8px] font-bold text-outline uppercase">Ahorro Medio</p>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Floating UI Elements -->
+<div class="fixed bottom-8 right-8 z-[60]">
+<button class="glass-panel w-14 h-14 rounded-full flex items-center justify-center text-primary shadow-[0_10px_30px_rgba(0,0,0,0.5)] border border-white/5 hover:scale-110 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-2xl" data-icon="chat_bubble">chat_bubble</span>
+</button>
+</div>
+</body></html>

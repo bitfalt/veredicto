@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-container": "#2ecc71",
+              "on-surface": "#e2e2e2",
+              "surface-variant": "#353535",
+              "on-surface-variant": "#d0c5af",
+              "surface-container-lowest": "#0e0e0e",
+              "surface-container": "#1f1f1f",
+              "primary-fixed": "#ffe088",
+              "on-primary-fixed": "#241a00",
+              "surface-tint": "#e9c349",
+              "surface-container-low": "#1b1b1b",
+              "outline-variant": "#4d4635",
+              "on-secondary-fixed": "#1c1b1b",
+              "tertiary-fixed": "#6bfe9c",
+              "surface-dim": "#131313",
+              "on-tertiary-fixed": "#00210c",
+              "inverse-surface": "#e2e2e2",
+              "on-secondary-container": "#b7b5b4",
+              "on-tertiary": "#003919",
+              "surface-container-highest": "#353535",
+              "primary": "#f2ca50",
+              "on-secondary-fixed-variant": "#474746",
+              "on-tertiary-fixed-variant": "#005228",
+              "on-background": "#e2e2e2",
+              "surface-bright": "#393939",
+              "secondary-fixed-dim": "#c8c6c5",
+              "tertiary-fixed-dim": "#4ae183",
+              "secondary-fixed": "#e5e2e1",
+              "on-tertiary-container": "#005027",
+              "secondary": "#c8c6c5",
+              "on-error": "#690005",
+              "on-secondary": "#313030",
+              "on-primary-fixed-variant": "#574500",
+              "error-container": "#93000a",
+              "tertiary": "#54e98a",
+              "secondary-container": "#474746",
+              "on-primary": "#3c2f00",
+              "primary-container": "#d4af37",
+              "on-primary-container": "#554300",
+              "error": "#ffb4ab",
+              "surface": "#131313",
+              "primary-fixed-dim": "#e9c349",
+              "inverse-primary": "#735c00",
+              "outline": "#99907c",
+              "on-error-container": "#ffdad6",
+              "inverse-on-surface": "#303030",
+              "background": "#131313",
+              "surface-container-high": "#2a2a2a"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        background-color: #131313;
+        color: #e2e2e2;
+      }
+      .obsidian-glass {
+        background: rgba(27, 27, 27, 0.7);
+        backdrop-filter: blur(20px);
+      }
+    </style>
+</head>
+<body class="font-body selection:bg-primary selection:text-on-primary overflow-x-hidden">
+<!-- SideNavBar (Authority Source: JSON) -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-[#1b1b1b] dark:bg-[#1b1b1b] flex flex-col h-full py-8 shadow-[20px_0_40px_rgba(0,0,0,0.4)] z-50">
+<div class="px-8 mb-12">
+<h1 class="text-xl font-black text-[#f2ca50] uppercase tracking-[0.05em] font-headline">Veredicto</h1>
+<p class="text-[10px] text-[#e2e2e2]/40 tracking-widest uppercase mt-1 font-label">The Obsidian Lens</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="text-[#e2e2e2]/60 py-3 px-6 hover:bg-[#353535]/50 hover:text-[#e2e2e2] transition-all duration-200 ease-in-out flex items-center gap-4 font-['Plus_Jakarta_Sans'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                Dashboard
+            </a>
+<a class="text-[#e2e2e2]/60 py-3 px-6 hover:bg-[#353535]/50 hover:text-[#e2e2e2] transition-all duration-200 ease-in-out flex items-center gap-4 font-['Plus_Jakarta_Sans'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined">folder_open</span>
+                Library
+            </a>
+<a class="text-[#e2e2e2]/60 py-3 px-6 hover:bg-[#353535]/50 hover:text-[#e2e2e2] transition-all duration-200 ease-in-out flex items-center gap-4 font-['Plus_Jakarta_Sans'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined">gavel</span>
+                Analysis
+            </a>
+<!-- Active State Logic applied to Settings -->
+<a class="bg-[#353535] text-[#f2ca50] rounded-r-full py-3 px-6 shadow-[inset_4px_0_0_0_#f2ca50] transition-all duration-200 ease-in-out flex items-center gap-4 font-['Plus_Jakarta_Sans'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined">settings</span>
+                Settings
+            </a>
+<a class="text-[#e2e2e2]/60 py-3 px-6 hover:bg-[#353535]/50 hover:text-[#e2e2e2] transition-all duration-200 ease-in-out flex items-center gap-4 font-['Plus_Jakarta_Sans'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined">help_outline</span>
+                Help
+            </a>
+</nav>
+<div class="px-6 mb-8">
+<button class="w-full bg-primary text-on-primary font-bold py-3 px-4 rounded-full flex items-center justify-center gap-2 hover:opacity-90 transition-all active:scale-95 shadow-[0_10px_20px_rgba(242,202,80,0.15)]">
+<span class="material-symbols-outlined text-xl">add</span>
+<span class="text-sm">New Analysis</span>
+</button>
+</div>
+<div class="mt-auto pt-4 border-t border-[#353535]/30">
+<a class="text-[#e2e2e2]/60 py-3 px-6 hover:bg-[#353535]/50 hover:text-[#e2e2e2] transition-all duration-200 ease-in-out flex items-center gap-4 font-['Plus_Jakarta_Sans'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined">logout</span>
+                Logout
+            </a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 min-h-screen bg-surface p-12 lg:p-16">
+<!-- Header -->
+<header class="mb-12">
+<h2 class="text-4xl font-extrabold font-headline text-on-surface tracking-tighter mb-2">Ajustes</h2>
+<p class="text-on-surface-variant font-body">Configura tu experiencia y personaliza la lente del Veredicto.</p>
+</header>
+<!-- Tab Navigation (Editorial Style) -->
+<div class="flex gap-8 mb-10 border-b border-surface-variant/30 pb-px">
+<button class="pb-4 text-primary font-bold border-b-2 border-primary transition-all text-sm tracking-wide uppercase">Perfil</button>
+<button class="pb-4 text-on-surface/40 hover:text-on-surface transition-all font-medium text-sm tracking-wide uppercase">Suscripción</button>
+<button class="pb-4 text-on-surface/40 hover:text-on-surface transition-all font-medium text-sm tracking-wide uppercase">Voz de la IA</button>
+<button class="pb-4 text-on-surface/40 hover:text-on-surface transition-all font-medium text-sm tracking-wide uppercase">Notificaciones</button>
+</div>
+<!-- Settings Content: Bento Grid Layout -->
+<div class="grid grid-cols-12 gap-8">
+<!-- Profile Section -->
+<section class="col-span-12 lg:col-span-7 space-y-8">
+<div class="bg-surface-container-low rounded-xl p-8 shadow-sm">
+<h3 class="text-xl font-bold font-headline mb-6 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">person</span>
+                        Información Personal
+                    </h3>
+<div class="flex items-center gap-6 mb-8">
+<div class="relative group">
+<img alt="User Avatar" class="w-24 h-24 rounded-full border-4 border-surface-container-highest object-cover" data-alt="Close up professional headshot of a person" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXYXIZsfd7WH8bO2UW3vdI4kgbWMDtyYLzK-_ZSZsUZEscx2ZNMH5DpPYaoTvlmB2bymYkEUPOB6TdwAPTflPKYnCWAdCuPGW2MoC2V1-QwFQgvPyV1jCRRu7OS5mMcaeTOTq9z-Z8wubX8JpvoE0vXmLdPBlWxY1GrFNUB1luelYFWzoRFBaovqXGQ3y7hHbTnZJhF8ZtqHeh_zCFvzK6N1v2hHFJ2FD0xwopQddrVIS0QkOlL2oLSB1aD2WUcgdT_tbIsDnnDik3"/>
+<button class="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity rounded-full">
+<span class="material-symbols-outlined text-on-primary">photo_camera</span>
+</button>
+</div>
+<div>
+<h4 class="text-lg font-semibold text-on-surface">Julián Montenegro</h4>
+<p class="text-on-surface-variant text-sm">Abogado Senior • Madrid, ES</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-on-surface/50 ml-1">Nombre Completo</label>
+<input class="w-full bg-surface-container-lowest border-none rounded-lg p-4 focus:ring-1 focus:ring-primary/30 transition-all text-on-surface" type="text" value="Julián Montenegro"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-on-surface/50 ml-1">Correo Electrónico</label>
+<input class="w-full bg-surface-container-lowest border-none rounded-lg p-4 focus:ring-1 focus:ring-primary/30 transition-all text-on-surface" type="email" value="j.montenegro@veredicto.ia"/>
+</div>
+<div class="col-span-2 space-y-2 pt-4">
+<label class="text-xs font-bold uppercase tracking-widest text-on-surface/50 ml-1">Bio Profesional</label>
+<textarea class="w-full bg-surface-container-lowest border-none rounded-lg p-4 focus:ring-1 focus:ring-primary/30 transition-all text-on-surface resize-none" rows="3">Especialista en derecho civil y análisis de riesgos contractuales. Usuario de Veredicto desde 2023.</textarea>
+</div>
+</div>
+</div>
+<!-- Security Settings -->
+<div class="bg-surface-container-low rounded-xl p-8 shadow-sm">
+<h3 class="text-xl font-bold font-headline mb-6 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">security</span>
+                        Seguridad
+                    </h3>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-4 hover:bg-surface-container transition-colors rounded-lg group">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant">lock</span>
+<div>
+<p class="font-medium text-on-surface">Cambiar Contraseña</p>
+<p class="text-xs text-on-surface-variant">Último cambio hace 3 meses</p>
+</div>
+</div>
+<button class="text-primary text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity">ACTUALIZAR</button>
+</div>
+<div class="flex items-center justify-between p-4 hover:bg-surface-container transition-colors rounded-lg group">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant">phonelink_lock</span>
+<div>
+<p class="font-medium text-on-surface">Autenticación de dos factores</p>
+<p class="text-xs text-tertiary">Activo • Protegido</p>
+</div>
+</div>
+<button class="text-on-surface-variant text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity">GESTIONAR</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Voice & Subscription Sidebar -->
+<aside class="col-span-12 lg:col-span-5 space-y-8">
+<!-- AI Voice Profiles -->
+<div class="bg-surface-container-low rounded-xl p-8 border border-primary/5">
+<h3 class="text-xl font-bold font-headline mb-6 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">record_voice_over</span>
+                        Voz de la IA
+                    </h3>
+<p class="text-sm text-on-surface-variant mb-6">Selecciona el tono y la personalidad para tus veredictos de audio.</p>
+<div class="space-y-3">
+<!-- Voice Active -->
+<div class="p-4 rounded-xl bg-surface-container-highest border border-primary/20 flex items-center justify-between cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">graphic_eq</span>
+</div>
+<div>
+<p class="font-bold text-on-surface text-sm">Analista Directo</p>
+<p class="text-[10px] uppercase tracking-wider text-primary">Actual • Conciso y Firme</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary">check_circle</span>
+</div>
+<!-- Voice Inactive -->
+<div class="p-4 rounded-xl bg-surface-container-lowest hover:bg-surface-container transition-all flex items-center justify-between cursor-pointer group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant">volume_up</span>
+</div>
+<div>
+<p class="font-medium text-on-surface-variant group-hover:text-on-surface text-sm">Mediador Calmo</p>
+<p class="text-[10px] uppercase tracking-wider text-on-surface/30">Diplomático y Sereno</p>
+</div>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100">play_circle</button>
+</div>
+<!-- Voice Inactive -->
+<div class="p-4 rounded-xl bg-surface-container-lowest hover:bg-surface-container transition-all flex items-center justify-between cursor-pointer group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant">volume_up</span>
+</div>
+<div>
+<p class="font-medium text-on-surface-variant group-hover:text-on-surface text-sm">Crítico Riguroso</p>
+<p class="text-[10px] uppercase tracking-wider text-on-surface/30">Detallista y Técnico</p>
+</div>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100">play_circle</button>
+</div>
+</div>
+<div class="mt-8 p-4 bg-primary/5 rounded-lg">
+<div class="flex items-center gap-3 text-primary mb-2">
+<span class="material-symbols-outlined text-sm">info</span>
+<span class="text-xs font-bold uppercase tracking-wider">Preview de Audio</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary w-1/3"></div>
+</div>
+</div>
+</div>
+<!-- Subscription Card (Glassmorphism) -->
+<div class="obsidian-glass rounded-xl p-8 border border-outline-variant/20 relative overflow-hidden">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-primary/10 blur-3xl rounded-full"></div>
+<h3 class="text-lg font-bold font-headline mb-1 text-on-surface">Veredicto Premium</h3>
+<p class="text-xs text-primary font-bold uppercase tracking-widest mb-6">Plan Anual Activo</p>
+<div class="flex items-baseline gap-1 mb-6">
+<span class="text-3xl font-black text-on-surface">€24.90</span>
+<span class="text-on-surface-variant text-sm">/mes</span>
+</div>
+<ul class="space-y-3 mb-8">
+<li class="flex items-center gap-3 text-sm text-on-surface/80">
+<span class="material-symbols-outlined text-tertiary text-lg">check</span>
+                            Análisis ilimitados
+                        </li>
+<li class="flex items-center gap-3 text-sm text-on-surface/80">
+<span class="material-symbols-outlined text-tertiary text-lg">check</span>
+                            Voces de IA personalizadas
+                        </li>
+<li class="flex items-center gap-3 text-sm text-on-surface/80">
+<span class="material-symbols-outlined text-tertiary text-lg">check</span>
+                            Exportación legal certificada
+                        </li>
+</ul>
+<button class="w-full py-3 bg-surface-container-highest text-on-surface font-bold rounded-lg border border-outline-variant/20 hover:bg-surface-variant transition-all">
+                        Gestionar Suscripción
+                    </button>
+</div>
+<!-- Danger Zone -->
+<div class="p-6 border border-error/20 rounded-xl bg-error/5 group">
+<div class="flex items-center gap-4 mb-4">
+<span class="material-symbols-outlined text-error">dangerous</span>
+<h4 class="font-bold text-error">Zona de Peligro</h4>
+</div>
+<p class="text-xs text-on-surface-variant mb-4 leading-relaxed">Eliminar tu cuenta es una acción permanente. Perderás todos tus análisis históricos y configuraciones.</p>
+<button class="text-error font-bold text-xs uppercase tracking-widest hover:underline decoration-2 underline-offset-4">Eliminar Cuenta Permanentemente</button>
+</div>
+</aside>
+</div>
+<!-- Sticky Bottom Actions -->
+<div class="fixed bottom-10 right-10 flex gap-4">
+<button class="bg-surface-container-highest text-on-surface px-8 py-4 rounded-full font-bold shadow-xl hover:bg-surface-variant transition-all">
+                Descartar
+            </button>
+<button class="bg-primary text-on-primary px-10 py-4 rounded-full font-bold shadow-[0_20px_40px_rgba(242,202,80,0.3)] hover:scale-105 transition-all">
+                Guardar Cambios
+            </button>
+</div>
+</main>
+</body></html>

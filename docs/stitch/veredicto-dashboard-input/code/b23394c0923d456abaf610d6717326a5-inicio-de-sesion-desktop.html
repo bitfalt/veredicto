@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Veredicto - Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-container": "#2ecc71",
+              "on-surface": "#e2e2e2",
+              "surface-variant": "#353535",
+              "on-surface-variant": "#d0c5af",
+              "surface-container-lowest": "#0e0e0e",
+              "surface-container": "#1f1f1f",
+              "primary-fixed": "#ffe088",
+              "on-primary-fixed": "#241a00",
+              "surface-tint": "#e9c349",
+              "surface-container-low": "#1b1b1b",
+              "outline-variant": "#4d4635",
+              "on-secondary-fixed": "#1c1b1b",
+              "tertiary-fixed": "#6bfe9c",
+              "surface-dim": "#131313",
+              "on-tertiary-fixed": "#00210c",
+              "inverse-surface": "#e2e2e2",
+              "on-secondary-container": "#b7b5b4",
+              "on-tertiary": "#003919",
+              "surface-container-highest": "#353535",
+              "primary": "#f2ca50",
+              "on-secondary-fixed-variant": "#474746",
+              "on-tertiary-fixed-variant": "#005228",
+              "on-background": "#e2e2e2",
+              "surface-bright": "#393939",
+              "secondary-fixed-dim": "#c8c6c5",
+              "tertiary-fixed-dim": "#4ae183",
+              "secondary-fixed": "#e5e2e1",
+              "on-tertiary-container": "#005027",
+              "secondary": "#c8c6c5",
+              "on-error": "#690005",
+              "on-secondary": "#313030",
+              "on-primary-fixed-variant": "#574500",
+              "error-container": "#93000a",
+              "tertiary": "#54e98a",
+              "secondary-container": "#474746",
+              "on-primary": "#3c2f00",
+              "primary-container": "#d4af37",
+              "on-primary-container": "#554300",
+              "error": "#ffb4ab",
+              "surface": "#131313",
+              "primary-fixed-dim": "#e9c349",
+              "inverse-primary": "#735c00",
+              "outline": "#99907c",
+              "on-error-container": "#ffdad6",
+              "inverse-on-surface": "#303030",
+              "background": "#131313",
+              "surface-container-high": "#2a2a2a"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-card {
+        background: rgba(27, 27, 27, 0.7);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+      .mesh-gradient {
+        background: radial-gradient(at top left, #f2ca50 0%, #d4af37 100%);
+      }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body min-h-screen flex items-center justify-center selection:bg-primary selection:text-on-primary">
+<main class="w-full max-w-md px-6 py-12">
+<!-- Brand Header -->
+<div class="text-center mb-12">
+<h1 class="font-headline text-4xl font-extrabold tracking-tighter text-primary uppercase mb-2">
+                Veredicto
+            </h1>
+<p class="font-label text-xs uppercase tracking-[0.2em] text-on-surface/40 font-medium">
+                The Obsidian Lens
+            </p>
+</div>
+<!-- Login Container -->
+<div class="glass-card rounded-xl p-8 shadow-[0_20px_40px_rgba(0,0,0,0.4)] relative overflow-hidden">
+<!-- Subtle Tonal Glow -->
+<div class="absolute -top-24 -right-24 w-48 h-48 bg-primary/5 rounded-full blur-3xl"></div>
+<div class="relative z-10">
+<h2 class="font-headline text-2xl font-bold text-on-surface mb-1">Bienvenido</h2>
+<p class="text-on-surface/60 text-sm mb-8">Accede a tu panel de análisis legal.</p>
+<!-- Social Logins -->
+<div class="grid grid-cols-2 gap-4 mb-8">
+<button class="flex items-center justify-center gap-2 bg-surface-container-highest hover:bg-surface-bright transition-colors rounded-lg py-3 text-sm font-medium border border-outline-variant/15">
+<span class="material-symbols-outlined text-lg" data-icon="google">google</span>
+                        Google
+                    </button>
+<button class="flex items-center justify-center gap-2 bg-surface-container-highest hover:bg-surface-bright transition-colors rounded-lg py-3 text-sm font-medium border border-outline-variant/15">
+<span class="material-symbols-outlined text-lg" data-icon="apple">ios</span>
+                        Apple
+                    </button>
+</div>
+<div class="relative flex items-center gap-4 mb-8">
+<div class="flex-grow h-[1px] bg-outline-variant/20"></div>
+<span class="text-[10px] uppercase tracking-widest text-on-surface/30 font-bold">o con email</span>
+<div class="flex-grow h-[1px] bg-outline-variant/20"></div>
+</div>
+<!-- Form -->
+<form class="space-y-6" onsubmit="return false;">
+<div class="space-y-1.5">
+<label class="text-[10px] uppercase tracking-widest text-on-surface/60 font-bold px-1" for="email">Correo Electrónico</label>
+<input class="w-full bg-surface-container-lowest border-none rounded-lg py-3 px-4 text-on-surface placeholder:text-on-surface/20 focus:ring-1 focus:ring-primary/50 focus:bg-surface-container transition-all" id="email" placeholder="nombre@empresa.com" type="email"/>
+</div>
+<div class="space-y-1.5">
+<div class="flex justify-between items-center px-1">
+<label class="text-[10px] uppercase tracking-widest text-on-surface/60 font-bold" for="password">Contraseña</label>
+<a class="text-[10px] uppercase tracking-widest text-primary/80 hover:text-primary font-bold" href="#">¿Olvido?</a>
+</div>
+<input class="w-full bg-surface-container-lowest border-none rounded-lg py-3 px-4 text-on-surface placeholder:text-on-surface/20 focus:ring-1 focus:ring-primary/50 focus:bg-surface-container transition-all" id="password" placeholder="••••••••" type="password"/>
+</div>
+<button class="w-full mesh-gradient text-on-primary font-headline font-bold py-4 rounded-full text-sm uppercase tracking-wider shadow-[0_10px_20px_rgba(242,202,80,0.15)] active:scale-95 transition-transform">
+                        Iniciar Sesión
+                    </button>
+</form>
+<!-- Footer Info -->
+<div class="mt-8 pt-8 border-t border-outline-variant/10 text-center">
+<p class="text-on-surface/40 text-[10px] uppercase tracking-[0.15em] mb-4">
+                        Seguridad de grado Obsidian
+                    </p>
+<div class="flex justify-center gap-2">
+<span class="material-symbols-outlined text-primary/40" data-icon="verified_user" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span class="material-symbols-outlined text-primary/40" data-icon="lock" style="font-variation-settings: 'FILL' 1;">lock</span>
+<span class="material-symbols-outlined text-primary/40" data-icon="encrypted" style="font-variation-settings: 'FILL' 1;">encrypted</span>
+</div>
+</div>
+</div>
+</div>
+<p class="text-center mt-8 text-on-surface/40 text-sm">
+            ¿No tienes cuenta? 
+            <a class="text-primary hover:underline font-medium" href="#">Contáctanos</a>
+</p>
+</main>
+<!-- Background Decoration -->
+<div class="fixed inset-0 -z-10 pointer-events-none opacity-20">
+<div class="absolute top-[10%] left-[15%] w-96 h-96 bg-primary/10 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-[20%] right-[10%] w-[500px] h-[500px] bg-surface-container-highest/30 rounded-full blur-[150px]"></div>
+</div>
+</body></html>
