@@ -1,0 +1,34 @@
+{
+  "name": "elevenlabs-firecrawl-starter",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@elevenlabs/client": "^0.15.2",
+    "@elevenlabs/elevenlabs-js": "^2.39.0",
+    "@elevenlabs/react": "^0.14.3",
+    "@mendable/firecrawl-js": "^4.16.0",
+    "framer-motion": "^12.38.0",
+    "mammoth": "^1.12.0",
+    "next": "^16.2.1",
+    "pdf-parse": "^2.4.5",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.2.2",
+    "@types/node": "^25.5.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "eslint": "^9.39.4",
+    "eslint-config-next": "^16.2.1",
+    "tailwindcss": "^4.2.2",
+    "typescript": "^5.9.3"
+  }
+}
